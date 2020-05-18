@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/biding.css">
+    <title>Document</title>
+</head>
+<body>
+        <% if (errorMessage) { %>
+                <div class="user-message user-message--error"><%= errorMessage %></div>
+            <% } %>
+        <ul class="grid">
+            
+                <li class="cart__item">
+                       
+                            <article class="card product-item">
+                                   
+                                             <%= prod.title %> 
+                                   
+                            <div class="card__image">
+                            <img src="/<%= prod.imageUrl %> "
+                            </div>
+                            <br>
+                           Description: <%= prod.description %> 
+                            <br>
+                            From:
+                            <%= prod.sourceadd %> 
+                            To:
+                            <%= destAdd %> 
+                           
+                    <h2 class="product__price">Quantity: <%= quantity %></h2>
+                    <hr>
+                         Current Bidding Price: <%= currentprice %>  
+                          
+                        <form action="/bidding" method="POST">
+                                <label for="bidprice" class="price">Your Price:</label>    
+                          <input type="number" name="bidprice" id="bidprice" required>
+                          <input type="hidden" id="BidId" name="BidId" value="<%= hiddenProdId %>">
+                          
+                          <input type="hidden" id="ItemId" name="ItemId" value="<%= hiddenItemId %>">
+                         
+                          
+                        <!---- <button  type="submit"> Bid!! </button> -->
+                        </form>
+                        <br>
+                         <form action="/quitbid" method="POST">
+                                <input type="hidden" id="BidId" name="BidId" value="<%= hiddenProdId %>">
+                          
+                                <input type="hidden" id="ItemId" name="ItemId" value="<%= hiddenItemId %>">
+
+                                <input type="hidden" id="BiddingAmount" name="BiddingAmount" value="<%= currentprice %>">
+                               
+                                <button  type="submit" class="button button2"> Quit Bidding!! </button>
+                        </form>
+            
+                            </article>
+                           
+                </li>
+         
+        </ul>
+      
+</body>
+</html>

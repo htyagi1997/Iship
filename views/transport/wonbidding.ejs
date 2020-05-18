@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/win.css">
+</head>
+<body>
+    <div class='flex-container'>
+        <div class="pic"><img src="/css/win.jpg"></div>
+    <div class="text">hurrah!! you won the bidding.
+   @ Rs.<%= currentprice %> 
+    Our executives will contact you shortly regarding the paper work.
+    Please Enjoy your bidding journey!!
+    </div>
+    <div>
+    <form action="/clearbiditem" method="POST">
+
+        <input type="hidden" id="prodId" name="prodId" value="<%= prodId %>">
+                          
+        <input type="hidden" id="itemId" name="itemId" value="<%= itemId %>">
+
+      
+       <button type="submit" class="button button2">Continue!!</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html>

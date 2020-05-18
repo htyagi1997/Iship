@@ -1,0 +1,35 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <ul class="cart__item-list">
+                <% products.forEach(p => { %>
+                    <li class="cart__item">
+                        <h1><%= p.productId.title %></h1>
+                        <h2>Quantity: <%= p.quantity %></h2>
+                    </li>
+                <% }) %>
+            </ul>
+            <div class="centered cart__item-list">
+                <h2>Total: <%= totalSum %></h2>
+                  <form action="/create-order" method="POST">
+                    <div class="form-control">
+                        <label for="destAdd"><h3>Shipping Address</h3></label>
+                        <textarea name="destAdd" id="destAdd" rows="5" required placeholder="Enter Shipping Address"></textarea>
+                    </div>
+                        
+                        <button type="submit" class="btn">Set a Deal!!</button>
+                    </form>
+                    <form action="/create-order-on-own" method="POST">
+                      <button type="submit" class="btn">Set a Deal on Your Own!!</button>
+                        </form>
+                    
+                
+            </div>
+            
+        </main>
+        <%- include('../includes/end.ejs') %>

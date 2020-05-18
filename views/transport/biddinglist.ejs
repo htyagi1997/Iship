@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/orders.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+</head>
+<body>
+    <main>
+      
+        <form action="/translogout" method="GET">
+            <button  type="submit" class="w3-button w3-border w3-hover-blue" > Logout! </button>
+        </form>
+            <% if (prods.length <= 0) { %>
+                <h1>Nothing there!</h1>
+            <% } else { %>
+                <% prods.forEach(prod => { %>
+        <ul class="grid">
+            
+                <li class="cart__item">
+                        <% prod.products.forEach(p => { %>
+                            <article class="card product-item">
+                                   
+                                             <%= p.product.title %> 
+                                   
+                            <div class="card__image">
+                            <img src="/<%= p.product.imageUrl %> ">
+                            </div>
+                            
+                            <%= p.product.sourceadd %> 
+                            <%= prod.destAdd %> 
+                           
+                    <h2 class="product__price">Quantity: <%= p.quantity %></h2>
+                            
+                            <div class="card__actions"> 
+                                 <a href="/bids/<%= prod._id %>/<%= p.product._id %> " class="btn">Start Bidding!!</a>
+                            </div>
+         
+                            </article>
+                </li>
+            <% }) %>
+        </ul>
+        <% }) %>
+        <% } %>
+    </main>
+    <
+</body>
+</html>

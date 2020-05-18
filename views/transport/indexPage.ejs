@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="/css/transLogin.css">
+    <script src='main.js'></script>
+    
+</head>
+<body>
+  <div class='flex-container'>
+    <div><img src="/css/trans.png"></div>
+   <div class='heading'> <h1>TransPorters Login Form</h1></div>
+  
+    <div class="btn"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
+    <div class="anchor" target="_blank"> <a href="/">Shopping portal</a></div>
+    <div id="id01" class="modal">
+      
+      <form class="modal-content animate" action="/translogin" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+        </div>
+    
+        <div class="container">
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Email" name="email" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+         
+          <button type="submit">Login</button>
+         
+        </div>
+        
+        
+        </div>
+      </form>
+    </div>
+   
+  </div>
+    <script>
+  
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    
+    </body>
+
+</html>
